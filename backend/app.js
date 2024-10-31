@@ -4,7 +4,7 @@ const sqlite3 = require("sqlite3");
 const database = require("./database");
 const validate = require("jsonschema").validate;
 
-const port = 3000;
+const port = 4000;
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -12,7 +12,7 @@ app.use(express.json());
 const db = new sqlite3.Database("database.db");
 database.createUserTable(db);
 
-app.post("/login", (req, res) => {
+app.post("/api/login", (req, res) => {
     const schema = {
         type: "object",
         properties: {
@@ -39,7 +39,7 @@ app.post("/login", (req, res) => {
     });
 });
 
-app.post("/register", (req, res) => {
+app.post("/api/register", (req, res) => {
     const schema = {
         type: "object",
         properties: {

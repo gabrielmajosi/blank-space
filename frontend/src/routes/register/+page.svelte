@@ -15,7 +15,7 @@
 		const form = event.target;
 
 		// post form data to the server as json
-		fetch('http://localhost:3000/register', {
+		fetch('/api/register', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
