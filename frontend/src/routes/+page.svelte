@@ -13,6 +13,8 @@
 	onMount(() => {
 		if (!localStorage.user) {
 			goto('/login');
+		} else {
+			user = JSON.parse(localStorage.user);
 		}
 	});
 </script>
