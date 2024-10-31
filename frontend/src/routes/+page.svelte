@@ -14,17 +14,6 @@
 		if (!localStorage.user) {
 			goto('/login');
 		}
-
-		user = JSON.parse(localStorage.user);
-
-		// check if there is an authenticated user
-		if (user) {
-			// we can stay
-			console.log(user);
-		} else {
-			// we need to redirect to the login page
-			goto('/login');
-		}
 	});
 </script>
 
