@@ -8,11 +8,13 @@
 	function signOut() {
 		localStorage.clear();
 		goto('/login');
+		return;
 	}
 
 	onMount(() => {
 		if (!localStorage.user) {
 			goto('/login');
+			return;
 		} else {
 			user = JSON.parse(localStorage.user);
 		}
